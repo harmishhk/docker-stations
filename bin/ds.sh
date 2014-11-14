@@ -894,7 +894,7 @@ case "$1" in
             -provision-docker)
 
                 # enter, install docker
-                vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -d build-all"
+                vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -d build base"
 
                 # exit
                 ds_newlne
