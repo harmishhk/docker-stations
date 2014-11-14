@@ -3,22 +3,26 @@ vconfig = YAML.load(File.open(File.join(File.dirname(__FILE__), "config.yaml"), 
 
 Vagrant.configure("2") do |config|
 
-  config.vm.define vconfig['VAGRANT_BOX_NAME'] do |m|
+    config.vm.define vconfig['VAGRANT_BOX_NAME'] do |m|
 
-    # set up basic box image
-    m.vm.box = "ubuntu/trusty64"
+        # set up basic box image
+        m.vm.box = "ubuntu/trusty64"
 
-    # set host name
-    m.vm.hostname = vconfig['VAGRANT_HOST_NAME']
+        # set host name
+        m.vm.hostname = vconfig['VAGRANT_HOST_NAME']
 
-    # set private network, machine will use this ip
-    m.vm.network "private_network", ip: vconfig['VAGRANT_HOST_IP']
+        # update machine configurations
+        config.vm.provider "virtualbox" do |v|
+            v.customize ["modifyvm", :id, "--memory", vconfig['VAGRANT_BOX_MEMORY'].to_i]
+            v.customize ["modifyvm", :id, "--cpus", vconfig['VAGRANT_BOX_CORES'].to_i]
+        end
 
-    # provision docker environment
-    m.vm.provision "docker"
+        # set private network, machine will use this ip
+        m.vm.network "private_network", ip: vconfig['VAGRANT_HOST_IP']
 
-    # provision base docker images
-    m.vm.provision "shell", path: "./bin/ds.sh", args: "-d new base base"
-  end
+        # provision docker environment
+        m.vm.provision "docker"
+
+    end
 
 end
