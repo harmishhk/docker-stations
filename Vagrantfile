@@ -17,13 +17,8 @@ Vagrant.configure("2") do |config|
     # provision docker environment
     m.vm.provision "docker"
 
-    # provision docker images
-    m.vm.provision "shell", path: "./bin/ds.sh", args: "-d build-all"
-
-    # provision docker containers
-    m.vm.provision "shell", path: "./bin/ds.sh", args: "-d new node node"
-    m.vm.provision "shell", path: "./bin/ds.sh", args: "-d new nginx nginx"
-
+    # provision base docker images
+    m.vm.provision "shell", path: "./bin/ds.sh", args: "-d new base base"
   end
 
 end
