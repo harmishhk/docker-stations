@@ -987,7 +987,7 @@ case "$1" in
 
                 # reloading box
                 ds_newlne
-                $0 -v -reload
+                $0 -v reload
                 ds_newlne
 
                 # building docker images
