@@ -875,7 +875,7 @@ case "$1" in
 
             -provision-bash)
 
-                # provisioon environment
+                # provision environment
                 vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -v bash"
 
                 # exit
@@ -907,10 +907,6 @@ case "$1" in
             # PUBLIC
 
             bash)
-
-                # remove .bash_profiel
-                rm ./.bash_profile
-
                 # copy .bash_profile into root
                 cp ${DEFAULT_VAGRANT_MOUNTED_ROOT}/etc/docker/images/base/conf/.bash_profile ./.bash_profile
 
