@@ -894,7 +894,8 @@ case "$1" in
             -provision-docker)
 
                 # enter, install docker
-                vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -d build base"
+                vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -d build base-1404 base-1404"
+                vagrant ssh -c "${DEFAULT_VAGRANT_MOUNTED_ROOT}/bin/ds.sh -d build base-1204 base-1204"
 
                 # exit
                 ds_newlne
@@ -908,7 +909,7 @@ case "$1" in
 
             bash)
                 # copy .bash_profile into root
-                cp ${DEFAULT_VAGRANT_MOUNTED_ROOT}/etc/docker/images/base/conf/.bash_profile ./.bash_profile
+                cp ${DEFAULT_VAGRANT_MOUNTED_ROOT}/etc/conf/.bash_profile ./.bash_profile
 
                 # exit
                 ds_newlne
@@ -1207,7 +1208,7 @@ case "$1" in
         echo '        |'
         echo '        | bash'
         echo '        | USAGE: ds -v bash'
-        echo '        | Copies /etc/docker/.../.bash_profile from host to Vagrant box, setting'
+        echo '        | Copies /etc/conf/.bash_profile from host to Vagrant box, setting'
         echo '        | aliases, you have to source new bash profile manually afterwards with'
         echo '        | $ . ./.bash_profile'
         echo '        |'

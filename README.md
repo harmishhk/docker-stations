@@ -35,7 +35,7 @@ Open `config.yaml`, edit project configuration as you please.
 VAGRANT_HOST_IP      : '192.168.33.10'
 VAGRANT_HOST_NAME    : 'test.com'
 VAGRANT_BOX_NAME     : 'app'
-VAGRANT_BASH_PROFILE : './etc/docker/images/base/conf/.bash_profile'
+VAGRANT_BASH_PROFILE : './etc/conf/.bash_profile'
 ```
 
 #### 2. Provision Vagrant & Docker
@@ -193,7 +193,7 @@ Commands:
         |
         | bash
         | USAGE: ds -v bash
-        | Copies /etc/docker/.../.bash_profile from host to Vagrant box, setting
+        | Copies /etc/conf/.bash_profile from host to Vagrant box, setting
         | aliases, you have to source new bash profile manually afterwards with
         | $ . ./.bash_profile
         |

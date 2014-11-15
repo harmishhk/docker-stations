@@ -104,7 +104,7 @@ Commands:
         |
         | bash
         | USAGE: ds -v bash
-        | Copies /etc/docker/.../.bash_profile from host to Vagrant box, setting aliases, you have to source new bash profile manually afterwards with $ . ./.bash_profile
+        | Copies /etc/conf/.bash_profile from host to Vagrant box, setting aliases, you have to source new bash profile manually afterwards with $ . ./.bash_profile
         |
         | kill
         | USAGE: ds -v kill
