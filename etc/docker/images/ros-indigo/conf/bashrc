@@ -1,0 +1,2 @@
+export HOME=/home/ros
+source /opt/ros/indigo/setup.bash
