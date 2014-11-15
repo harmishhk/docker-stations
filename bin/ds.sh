@@ -1098,7 +1098,7 @@ case "$1" in
         echo 'alias   | SHORTCUT: -> ds -p alias'
         echo '        | Sets Docker Station alias to current location.'
         echo '        |'
-        echo 'down    | SHORTCUT: -> ds -p alias'
+        echo 'down    | SHORTCUT: -> ds -v sleep'
         echo '        | Send Vagrant box to sleep.'
         echo ''       |
         echo 'init    | SHORTCUT: -> ds -v new [-f]'

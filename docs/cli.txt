@@ -4,17 +4,23 @@ Usage: ds [options] <command> [<args>]
 
 Shortcuts:
 
-down    | SHORTCUT: -> ds -p alias
-        | Send Vagrant box to sleep.
-
-init    | SHORTCUT: -> ds -v new [-f]
-        | Provision Vagrant box initially, -f forces destroy first.
-
-project | SHORTCUT: -> ds -p new PATH [REPOSITORY]
-
-this    | SHORTCUT: -> ds -v sleep
+alias   | SHORTCUT: -> ds -p alias
         | Sets Docker Station alias to current location.
-
+        |
+down    | SHORTCUT: -> ds -v sleep
+        | Send Vagrant box to sleep.
+        |
+init    | SHORTCUT: -> ds -v new [-f]
+        | Provision Vagrant box initially, -f forces destroy
+        | first.'
+        |
+list    | SHORTCUT: -> ds -v list
+        | Shows a list of all vagrant boxes in the local system.
+        |
+new     | SHORTCUT: -> ds -p new PATH [REPOSITORY]'
+        | Creates new Docker Station project in PATH, clones set
+        | git repository
+        |
 up      | SHORTCUT: -> ds -v wake
         | Wakes up halted, suspended Vagrant box.
 
