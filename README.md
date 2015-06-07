@@ -1,6 +1,6 @@
 Docker Station
 ======
-The `Docker Station` is a boilerplate project to create a local development environment for running [Node.js](http://nodejs.org/) applications under [nginx](http://nginx.org/) in [Docker](https://www.docker.com/) containers - all hosted on [Vagrant](https://www.vagrantup.com/) virtual machines, therefore ready-to-use on Mac OS X.
+The `Docker Station` is a boilerplate project to create a local development environment for running  [Docker](https://www.docker.com/) containers - all hosted on [Vagrant](https://www.vagrantup.com/) virtual machine (Ubuntu 14.04), therefore ready-to-use.
 
 **Before we start ...**  
 It's still early in the project - there might be bugs and lots of stuff to improve - anyway it's a start. Let me know if you you find something, just hammer the issues section.
@@ -46,9 +46,9 @@ Provision Vagrant box, start Docker containers, run app.
 $ ds -v new
 ```
 
-The first time running this will take a few minutes. 
+The first time running this will take a few minutes.
 
-When done, open your browser and see your app running at: [http://192.168.33.10](http://192.168.33.10). 
+When done, open your browser and see your app running at: [http://192.168.33.10](http://192.168.33.10).
 
 #### 3. /etc/hosts - Set Host
 
@@ -74,7 +74,7 @@ Let's start developing and make some changes:
 - refresh browser at [http://test.com](http://test.com)
 - it's automatically updated
 
-## CLI 
+## CLI
 Use the `ds` CLI to run, stop, manage your box and containers.
 
 ```
@@ -227,14 +227,14 @@ Commands:
 ```
 
 ##  Project Directory Layout
-After checking out `Docker Station` and running `./bin/ds.sh new ...` to [initiate]() your project - it will have following directory layout. 
+After checking out `Docker Station` and running `./bin/ds.sh new ...` to [initiate]() your project - it will have following directory layout.
 
 #### /
 ```
 # configuration files
 
 | .gitignore
-| config.yaml 
+| config.yaml
 | Vagrantfile  
 ```
 
@@ -250,7 +250,7 @@ After checking out `Docker Station` and running `./bin/ds.sh new ...` to [initia
 #### /etc
 ```
 # all the docker images supported at this pointn in
-# time, more images will be added 
+# time, more images will be added
 
 ├── etc  
 │   └── docker
@@ -261,12 +261,12 @@ After checking out `Docker Station` and running `./bin/ds.sh new ...` to [initia
 │   │   │   │   └── conf
 │   │   │   │   │ Dockerfile
 │   │   │   └── ...
-```   
+```
 
 #### /var
 ```
-# holds all Vagrant mounted directories and Docker 
-# Volumes, it's the persistent layer of your dev 
+# holds all Vagrant mounted directories and Docker
+# Volumes, it's the persistent layer of your dev
 # environment
 
 ├── var  
@@ -279,5 +279,3 @@ After checking out `Docker Station` and running `./bin/ds.sh new ...` to [initia
 │   └── www
 │   │   └── [YOUR_APPLICATION_FILES]
 ```
-
-

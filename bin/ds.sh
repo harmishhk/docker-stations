@@ -719,7 +719,7 @@ case "$1" in
                     ALIAS=$(grep -F "ds=" ${CURRENT_CONFIG_PATH})
 
                     # insert if not set yet
-                    if [[ ! "$ALIAS" ]] ; then
+                    if [ ! "$ALIAS" ] ; then
                         #echo '-'
                         ds_alias_insert "${ALIAS_NEW}"
 
